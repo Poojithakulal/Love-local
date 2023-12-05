@@ -1,0 +1,15 @@
+def shortest_palindrome(s):
+    if not s:
+        return ""
+
+    i = 0
+    for j in range(len(s) - 1, -1, -1):
+        if s[i] == s[j]:
+            i += 1
+
+    # The remaining portion of the string needs to be reversed and added to the front
+    return s[i:][::-1] + s
+
+# Test cases
+print(shortest_palindrome("aacecaaa"))  # Output: "aaacecaaa"
+print(shortest_palindrome("abcd"))  # Output: "dcbabcd"
